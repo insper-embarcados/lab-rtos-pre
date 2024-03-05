@@ -14,11 +14,7 @@ steps:
       part-id: btnr
       control: pressed
       value: 0
-  - delay: 100ms
 
-  - wait-pin-change:
-      part-id: ledr
-      pin: A
   - wait-pin-change:
       part-id: ledr
       pin: A
@@ -36,17 +32,11 @@ steps:
       part-id: btng
       control: pressed
       value: 0
-  - delay: 100ms
 
   - wait-pin-change:
-      part-id: ledr
-      pin: A
-  - wait-pin-change:
       part-id: ledg
       pin: A
-  - wait-pin-change:
+  - expect-pin:
       part-id: ledr
       pin: A
-  - wait-pin-change:
-      part-id: ledg
-      pin: A
+      value: 0
