@@ -23,6 +23,8 @@ steps:
       pin: A
       value: 0
 
+  - delay: 500ms
+
   - set-control:
       part-id: btng
       control: pressed
