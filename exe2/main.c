@@ -19,7 +19,6 @@ void led_1_task(void *p) {
   gpio_set_dir(LED_PIN_R, GPIO_OUT);
 
   int delay = 250;
-  int status = 0;
 
   while (true) {
 
