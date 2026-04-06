@@ -3,7 +3,7 @@ name: exe5
 on:
   push:
     paths:
-      - 'exe4/main.c'
+      - 'exe5/main.c'
 jobs:
   exe5:
     runs-on: ubuntu-latest
