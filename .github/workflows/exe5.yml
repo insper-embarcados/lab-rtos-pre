@@ -17,7 +17,7 @@ jobs:
       - uses: insper-embarcados/actions-firmware-rubric-check@v0
         with:
           c_file: exe5/main.c
-          rubric_file: exe1/rubric_firmware.yml
+          rubric_file: exe5/rubric_firmware.yml
       - uses: insper-embarcados/actions-embedded-check@v1
         with:
           c_file: exe5/main.c
