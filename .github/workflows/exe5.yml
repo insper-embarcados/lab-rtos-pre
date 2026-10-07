@@ -3,9 +3,10 @@ name: exe5
 on:
   push:
     paths:
-      - 'exe4/main.c'
+      - 'exe5/main.c'
+
 jobs:
-  exe5:
+  build-and-wokwi:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -14,13 +15,28 @@ jobs:
         with:
           token: ${{ secrets.WOKWI_CLI_TOKEN }}
           test_name: exe5
-      - uses: insper-embarcados/actions-firmware-rubric-check@v0
-        with:
-          c_file: exe5/main.c
-          rubric_file: exe1/rubric_firmware.yml
+
+  embedded-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
       - uses: insper-embarcados/actions-embedded-check@v1
         with:
           c_file: exe5/main.c
+          rtos: true
+
+  cppcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
       - uses: insper-embarcados/actions-cppcheck@v1
+        with:
+          c_file: exe5/main.c
+
+  rubric-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: insper-embarcados/actions-firmware-rubric-check@v0
         with:
           c_file: exe5/main.c
