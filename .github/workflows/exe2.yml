@@ -11,10 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: insper-embarcados/pico-build@v4
-      - uses: insper-embarcados/actions-wokwi-test@v3
+      - uses: insper-embarcados/actions-wokwi-test@v4
         with:
           token: ${{ secrets.WOKWI_CLI_TOKEN }}
           test_name: exe2
+          time_out: 5000
 
   embedded-check:
     runs-on: ubuntu-latest
