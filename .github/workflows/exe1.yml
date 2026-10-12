@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: insper-embarcados/pico-build@v4
-      - uses: insper-embarcados/actions-wokwi-test@v4
+      - uses: insper-embarcados/actions-wokwi-test@v3
         with:
           token: ${{ secrets.WOKWI_CLI_TOKEN }}
           test_name: exe1
